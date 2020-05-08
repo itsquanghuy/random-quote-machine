@@ -4,7 +4,7 @@ import QuoteBox from './components/quoteBox';
 
 function App() {
 	return (
-		<div className='bg-warning'>
+		<div className='container'>
 			<QuoteBox />
 		</div>
 	);

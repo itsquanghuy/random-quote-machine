@@ -36,15 +36,33 @@ class QuoteBox extends Component {
 		const { quote } = this.state;
 
 		return (
-			<div id='quote-box'>
-				<div id='text'>{quote && quote.quote}</div>
-				<div id='author'>{quote && quote.author}</div>
-				<a href={quote && quote.twitterUrl} id='tweet-quote'>
-					Twitter
-				</a>
-				<button id='new-quote' onClick={this.handleChangeQuote}>
-					New Quote
-				</button>
+			<div
+				id='quote-box'
+				className='mx-auto mt-5 text-center'
+				style={{ width: 500 }}
+			>
+				<blockquote id='text' className='blockquote'>
+					<p className='mb-0'>{quote && quote.quote}</p>
+					<footer id='author' className='blockquote-footer'>
+						{quote && quote.author}
+					</footer>
+				</blockquote>
+				<div className='row'>
+					<div className='col'>
+						<a href={quote && quote.twitterUrl} id='tweet-quote'>
+							<i className='fa fa-twitter'></i>
+						</a>
+					</div>
+					<div className='col'>
+						<button
+							id='new-quote'
+							className='btn btn-primary'
+							onClick={this.handleChangeQuote}
+						>
+							New Quote
+						</button>
+					</div>
+				</div>
 			</div>
 		);
 	}
